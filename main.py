@@ -25,22 +25,22 @@ while True:
         
         if book_input == '1':
             clear_screen()
-            book_name = input('enter book name:')
+            book_name = input('enter the name of the book:')
             library.show_authors()
-            author_id = input('enter authors_id:')
-            year_of_release = input('enter year_of_release :')
+            author_id = input('enter the authors_id:')
+            year_of_release = input('enter the  publication year :')
             book = Book(book_name , author_id , year_of_release)
             library.add_books(book)
             clear_screen()
 
         elif book_input == '2':
             clear_screen()
-            new_book_value = input('enter new book name:')
+            new_book_value = input('enter the new name of the book:')
             library.show_authors()
             new_authors_value = input('enter new authors_id:')
-            new_year_value = input('enter new year_of_release name:')
+            new_year_value = input('enter the new publication year:')
             library.show_id_and_name()
-            book_id = input('please enter id of the book you want change:')
+            book_id = input('please enter the book id you want change:')
             book = Book(new_book_value , new_authors_value , new_year_value )
             library.update_book(book , book_id)
             clear_screen()
@@ -48,7 +48,7 @@ while True:
         elif book_input == '3':
             clear_screen()
             library.show_id_and_name()
-            book_id = input('please enter id of the book you want delete:')
+            book_id = input('please enter the book id you want delete:')
             ask_again = input('are you sure . you want to delete this book? [y/n]?')
             if ask_again == 'y':
                 library.delete_book(book_id)
@@ -83,7 +83,7 @@ while True:
         elif authors_input == '2':
             clear_screen()
             library.show_authors()
-            authors_id = input('please enter the id of authors you want update:')
+            authors_id = input('please enter author id you want change:')
             edited_aothors = input('enter a new name for aouthors:')
             author = Author(edited_aothors)
             library.update_authors(author , authors_id)
@@ -92,7 +92,7 @@ while True:
         elif authors_input == '3':
             clear_screen()
             library.show_authors()
-            authors_id = input('plese enter the id authors you want delete:')
+            authors_id = input('plese enter the author id you want delete:')
             ask_again = input('are you sure . you want to delete this authors? [y/n]?')
 
             if ask_again == 'y':
@@ -100,7 +100,8 @@ while True:
                 clear_screen()
             elif ask_again == 'n':
                 print('ok ')
-
+            else:
+                print('you cant choose this . try again')
         elif authors_input == '4':
             clear_screen()
             print('all authors:')
@@ -111,7 +112,7 @@ while True:
         elif authors_input == '5':
             clear_screen()
             library.show_authors()
-            authors_id = input('please enter of the authors you want see books:')
+            authors_id = input('enter the author id to see all their books:')
             clear_screen()
             library.all_books_from_authors(authors_id)
             end = input('please click any key to end this part:')
@@ -135,8 +136,8 @@ while True:
         elif members_input == '2':
             clear_screen()
             library.show_members()
-            members_id = input('please enter the id of member you want update:')
-            new_members = input('please enter new members name:')
+            members_id = input('please enter member id you want change:')
+            new_members = input('please enter new member name:')
             member = Member(new_members)
             library.update_members(member , members_id)
             clear_screen()
@@ -144,7 +145,7 @@ while True:
         elif members_input == '3':
             clear_screen()
             library.show_members()
-            member_id = input('please enter the id you want delete:')
+            member_id = input('please enter member id want delete:')
             ask_again = input('are you sure . you want to delete this member? [y/n]?')
             
             if ask_again == 'y':
@@ -152,7 +153,8 @@ while True:
                 clear_screen()
             elif ask_again == 'n':
                 print('ok ')
-                
+            else:
+                print('you cant choose this . try again')
         elif members_input == '4':
             clear_screen()
             print('all members')
